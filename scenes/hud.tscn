@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvpa3feh33xix"]
+
+[ext_resource type="Script" uid="uid://ibmg8ik488dw" path="res://scripts/hud.gd" id="1_ahhtf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ahhtf"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_oo0fn"]
+font_size = 24
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_ahhtf")
+
+[node name="EggLabel" type="Label" parent="."]
+offset_left = 54.0
+offset_top = 62.0
+offset_right = 132.0
+offset_bottom = 96.0
+text = "Eggs: 0"
+label_settings = SubResource("LabelSettings_ahhtf")
+
+[node name="ChickenLabel" type="Label" parent="."]
+offset_left = 52.0
+offset_top = 108.0
+offset_right = 182.0
+offset_bottom = 142.0
+text = "Chickens: 3"
+label_settings = SubResource("LabelSettings_oo0fn")

@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://bt5q0lr50uk4m"]
+
+[ext_resource type="Script" uid="uid://e5y4j0jn36ts" path="res://scripts/chicken.gd" id="1_1yv3s"]
+[ext_resource type="Texture2D" uid="uid://c5qhx7afghkb1" path="res://sprites/chicken_sprite.png" id="1_45cuv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_45cuv"]
+atlas = ExtResource("1_45cuv")
+region = Rect2(33, 0, 64, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_isa2u"]
+atlas = ExtResource("1_45cuv")
+region = Rect2(97, 0, 64, 49)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tl7hd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45cuv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_isa2u")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_45cuv"]
+size = Vector2(37, 25)
+
+[node name="chicken" type="Area2D" groups=["chickens"]]
+script = ExtResource("1_1yv3s")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_tl7hd")
+animation = &"idle"
+frame_progress = 0.8785929
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 2.5)
+shape = SubResource("RectangleShape2D_45cuv")
+
+[node name="WanderTimer" type="Timer" parent="."]
+wait_time = 3.057
+autostart = true
+
+[node name="EggTimer" type="Timer" parent="."]
+wait_time = 3.057
+autostart = true
+
+[connection signal="timeout" from="EggTimer" to="." method="_on_egg_timer_timeout"]

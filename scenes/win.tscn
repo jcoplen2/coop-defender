@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://kqtbk0fiunbx"]
+
+[ext_resource type="Script" uid="uid://d0f87862mtwhy" path="res://scripts/win.gd" id="1_r4oei"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_afbyi"]
+font_size = 34
+
+[node name="Win" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_r4oei")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 651.0
+color = Color(4.982285e-09, 0.012470654, 0.0009971992, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 268.0
+offset_top = 281.0
+offset_right = 887.0
+offset_bottom = 328.0
+text = "You win! Congrats on saving the farm!"
+label_settings = SubResource("LabelSettings_afbyi")
+
+[node name="Play Again" type="Button" parent="."]
+layout_mode = 0
+offset_left = 553.0
+offset_top = 439.0
+offset_right = 641.0
+offset_bottom = 470.0
+text = "Play Again"
+
+[connection signal="pressed" from="Play Again" to="." method="_on_play_again_pressed"]

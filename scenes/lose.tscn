@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbjxwggk21a02"]
+
+[ext_resource type="Script" uid="uid://ci88pa2r3db2d" path="res://scripts/lose.gd" id="1_vjdtf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_afbyi"]
+font_size = 34
+
+[node name="Lose" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_vjdtf")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 651.0
+color = Color(4.982285e-09, 0.012470654, 0.0009971992, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 130.0
+offset_top = 202.0
+offset_right = 1042.0
+offset_bottom = 349.0
+text = "You didn't collect enough eggs to replace what was lost!
+
+"
+label_settings = SubResource("LabelSettings_afbyi")
+
+[node name="Play Again" type="Button" parent="."]
+layout_mode = 0
+offset_left = 538.0
+offset_top = 408.0
+offset_right = 626.0
+offset_bottom = 439.0
+text = "Try Again"
+
+[connection signal="pressed" from="Play Again" to="." method="_on_play_again_pressed"]

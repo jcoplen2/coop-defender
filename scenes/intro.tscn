@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://rar2p2nxk31y"]
+
+[ext_resource type="Script" uid="uid://bd1ypp8rjdqyk" path="res://scripts/intro.gd" id="1_ioskq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_sjfbp"]
+font_size = 24
+font_color = Color(0.011087579, 0.011087578, 0.01108758, 1)
+
+[node name="Intro" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ioskq")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 650.0
+color = Color(0.36690533, 0.5022479, 1, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 279.0
+offset_top = 145.0
+offset_right = 951.0
+offset_bottom = 312.0
+text = "It started like any other day on the chicken farm.
+But then, you hear your chickens sounding distressed...
+
+The snakes are slithering through the grass, hungry for trouble.
+Protect your flock! Save the eggs to keep your farm afloat!"
+label_settings = SubResource("LabelSettings_sjfbp")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 510.0
+offset_top = 378.0
+offset_right = 606.0
+offset_bottom = 409.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Start Game"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

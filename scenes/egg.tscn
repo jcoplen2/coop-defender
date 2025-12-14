@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2tmw65ngtn8l"]
+
+[ext_resource type="Texture2D" uid="uid://dfoaattnd632v" path="res://sprites/egg.png" id="1_6upkn"]
+[ext_resource type="Script" uid="uid://c8rt7piw3xf6v" path="res://scripts/egg.gd" id="1_qlus4"]
+[ext_resource type="AudioStream" uid="uid://c0kj1mo7jxo82" path="res://sounds/406244__stubb__telephone_pick-up_near_mono.wav" id="3_34461"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_60cwx"]
+radius = 6.0827627
+
+[node name="egg" type="Area2D"]
+script = ExtResource("1_qlus4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(35, 25)
+texture = ExtResource("1_6upkn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(35, 25)
+shape = SubResource("CircleShape2D_60cwx")
+
+[node name="PickupSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_34461")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
