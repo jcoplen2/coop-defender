@@ -8,11 +8,11 @@ var attacking = false
 
 func _ready():
 	anim_sprite.animation_finished.connect(_on_animation_finished)
-	attack_area.monitoring = false  # Hide attack area until attack
+	attack_area.monitoring = false  
 
 func _physics_process(delta):
 	if attacking:
-		return  # Don't move while attacking
+		return 
 
 	var input = Vector2(
 		Input.get_action_strength("right") - Input.get_action_strength("left"),
@@ -40,7 +40,7 @@ func _input(event):
 func start_attack():
 	attacking = true
 	anim_sprite.play("attack")
-	attack_area.monitoring = true  # Enable hitbox
+	attack_area.monitoring = true 
 
 func _on_animation_finished():
 	if anim_sprite.animation == "attack":
@@ -50,4 +50,4 @@ func _on_animation_finished():
 
 func _on_attack_area_area_entered(area: Area2D) -> void:
 	if area.is_in_group("snakes"):
-		area.queue_free()  # kill the snake
+		area.queue_free() 

@@ -11,7 +11,6 @@ func reset_game(egg_goal: int, chicken_count: int):
 	eggs_collected = 0
 	chickens_alive = chicken_count
 
-	# Update HUD if it's assigned
 	if hud:
 		hud.update_eggs(eggs_collected)
 		hud.update_chickens(chickens_alive)

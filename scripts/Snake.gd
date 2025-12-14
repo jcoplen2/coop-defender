@@ -29,11 +29,11 @@ func find_nearest_chicken():
 				closest_dist = dist
 				closest = chicken
 	
-	target = closest  # ← Don't forget this line!
+	target = closest  
 
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("chickens"):
 		GameManager.chicken_lost()
 		$DeathSound.play()
-		area.queue_free()  # remove chicken
+		area.queue_free()  

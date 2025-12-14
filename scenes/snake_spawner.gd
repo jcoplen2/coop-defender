@@ -8,7 +8,6 @@ var current_snakes: int = 0
 
 func _ready():
 	spawn_snake()
-	# Start spawning loop
 	_spawn_timer()
 
 func _spawn_timer():
@@ -32,5 +31,4 @@ func spawn_snake():
 
 	current_snakes += 1
 
-	# When the snake is removed, decrease the count
 	snake.tree_exited.connect(func(): current_snakes -= 1)
