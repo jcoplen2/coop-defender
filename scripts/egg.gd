@@ -7,5 +7,5 @@ func _on_body_entered(body):
 	if body.name == "Player":
 		GameManager.add_egg()
 		$PickupSound.play()
-		await get_tree().create_timer(0.2).timeout
+		await $PickupSound.finished
 		queue_free()

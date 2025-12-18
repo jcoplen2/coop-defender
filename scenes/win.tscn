@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://kqtbk0fiunbx"]
+[gd_scene load_steps=4 format=3 uid="uid://kqtbk0fiunbx"]
 
 [ext_resource type="Script" uid="uid://d0f87862mtwhy" path="res://scripts/win.gd" id="1_r4oei"]
+[ext_resource type="AudioStream" uid="uid://kdkmmcnn07ed" path="res://sounds/518855__mrickey13__fight-win-tune.wav" id="2_826fv"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_afbyi"]
 font_size = 34
@@ -34,5 +35,8 @@ offset_top = 439.0
 offset_right = 641.0
 offset_bottom = 470.0
 text = "Play Again"
+
+[node name="ResultSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_826fv")
 
 [connection signal="pressed" from="Play Again" to="." method="_on_play_again_pressed"]
